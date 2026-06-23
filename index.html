@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>阳朔花语谷 四季花园度假秘境</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blossom: oklch(0.72 0.14 10);
+  --blush: oklch(0.78 0.08 20);
+  --terracotta: oklch(0.56 0.13 35);
+  --sage: oklch(0.58 0.06 150);
+  --moss: oklch(0.38 0.05 145);
+  --cream: oklch(0.96 0.01 90);
+  --stone: oklch(0.91 0.01 85);
+  --warm-gray: oklch(0.52 0.02 80);
+  --deep: oklch(0.25 0.04 50);
+  --surface: oklch(0.985 0.002 90);
+  --text-primary: oklch(0.22 0.02 60);
+  --text-secondary: oklch(0.45 0.02 70);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: oklch(0.18 0.01 60);
+    --text-primary: oklch(0.91 0.01 90);
+    --text-secondary: oklch(0.68 0.02 80);
+    --cream: oklch(0.22 0.02 70);
+    --stone: oklch(0.25 0.02 70);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: clamp(15px, 2.5vw, 18px);
+}
+
+body {
+  font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  background: var(--surface);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 1.5rem 3rem;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 25%, oklch(0.84 0.06 100 / 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 20% 80%, oklch(0.72 0.14 10 / 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 35% at 80% 65%, oklch(0.60 0.12 140 / 0.18) 0%, transparent 60%),
+    linear-gradient(175deg, oklch(0.36 0.05 135) 0%, oklch(0.30 0.05 105) 30%, oklch(0.24 0.04 75) 65%, oklch(0.18 0.03 55) 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1.2px 1.2px at 15% 25%, oklch(1 0 0 / 0.7) 50%, transparent 50%),
+    radial-gradient(1px 1px at 70% 15%, oklch(1 0 0 / 0.55) 50%, transparent 50%),
+    radial-gradient(1px 1px at 35% 55%, oklch(1 0 0 / 0.4) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 85% 35%, oklch(1 0 0 / 0.6) 50%, transparent 50%),
+    radial-gradient(1px 1px at 8% 65%, oklch(1 0 0 / 0.35) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 55% 70%, oklch(1 0 0 / 0.45) 50%, transparent 50%),
+    radial-gradient(1px 1px at 92% 20%, oklch(1 0 0 / 0.4) 50%, transparent 50%),
+    radial-gradient(1px 1px at 28% 40%, oklch(1 0 0 / 0.5) 50%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: oklch(0.92 0.03 20);
+  border: 1px solid oklch(0.92 0.03 20 / 0.35);
+  border-radius: 2rem;
+  padding: 0.35em 1.4em;
+  margin-bottom: 1.2rem;
+  backdrop-filter: blur(4px);
+}
+
+.hero h1 {
+  font-family: 'Noto Serif SC', 'STSong', serif;
+  font-weight: 600;
+  font-size: clamp(2.2rem, 8vw, 3.6rem);
+  line-height: 1.2;
+  color: oklch(0.97 0.01 95);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 small {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.42em;
+  letter-spacing: 0.25em;
+  color: oklch(0.88 0.02 30);
+  opacity: 0.85;
+  margin-bottom: 0.15em;
+}
+
+.hero-desc {
+  font-size: 0.95rem;
+  color: oklch(0.88 0.02 20 / 0.85);
+  max-width: 23em;
+  line-height: 1.85;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--deep);
+  background: oklch(0.94 0.03 85);
+  border: none;
+  border-radius: 3rem;
+  padding: 0.85em 2em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+  box-shadow: 0 4px 24px oklch(0 0 0 / 0.18);
+}
+
+.hero-cta:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 12px oklch(0 0 0 / 0.12);
+}
+
+.hero-cta svg {
+  width: 1.1em;
+  height: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.hero-cta:active svg {
+  transform: translateX(4px);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  animation: floatDown 2.4s ease-in-out infinite;
+}
+
+.hero-scroll span {
+  display: block;
+  width: 1px;
+  height: 2rem;
+  background: oklch(0.9 0.02 30 / 0.5);
+}
+
+@keyframes floatDown {
+  0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 1; transform: translateX(-50%) translateY(8px); }
+}
+
+/* ── Season Banner ── */
+.season-banner {
+  background: oklch(0.68 0.09 8);
+  color: oklch(0.96 0.01 90);
+  text-align: center;
+  padding: 0.9rem 1.5rem;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.season-banner .divider {
+  width: 1px;
+  height: 1em;
+  background: oklch(0.9 0.02 30 / 0.4);
+}
+
+/* ── Section Common ── */
+section {
+  padding: clamp(2.5rem, 8vw, 4.5rem) clamp(1.2rem, 5vw, 2rem);
+}
+
+.section-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--terracotta);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: clamp(1.45rem, 5vw, 2rem);
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.section-sub {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  max-width: 26em;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+/* ── Overview Stats ── */
+.overview {
+  background: var(--surface);
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 0.8rem 0.3rem;
+  background: var(--cream);
+  border-radius: 0.75rem;
+}
+
+.stat-item .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--terracotta);
+  line-height: 1;
+}
+
+.stat-item .label {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* ── Highlights ── */
+.highlights {
+  background: var(--cream);
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.highlight-card {
+  border-radius: 0.75rem;
+  padding: 1.4rem 1rem 1.1rem;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+}
+
+.highlight-card:active {
+  transform: scale(0.97);
+}
+
+.highlight-card:nth-child(1) { background: oklch(0.88 0.04 140 / 0.22); }
+.highlight-card:nth-child(2) { background: oklch(0.78 0.06 20 / 0.13); }
+.highlight-card:nth-child(3) { background: oklch(0.84 0.06 90 / 0.22); }
+.highlight-card:nth-child(4) { background: oklch(0.76 0.04 250 / 0.13); }
+.highlight-card:nth-child(5) { background: oklch(0.82 0.05 50 / 0.16); }
+.highlight-card:nth-child(6) { background: oklch(0.85 0.03 180 / 0.15); }
+
+.highlight-icon {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.highlight-card h3 {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 0.2rem;
+}
+
+.highlight-card p {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Rooms ── */
+.rooms {
+  background: var(--surface);
+}
+
+.room-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.room-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  padding: 1rem 1.2rem;
+  background: var(--cream);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 0 oklch(0 0 0 / 0.03), 0 2px 8px oklch(0 0 0 / 0.02);
+}
+
+.room-item h4 {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.15rem;
+}
+
+.room-item .room-meta {
+  font-size: 0.73rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.room-item .room-feature {
+  font-size: 0.73rem;
+  color: var(--sage);
+  font-weight: 500;
+}
+
+/* ── Facilities ── */
+.facilities {
+  background: var(--cream);
+}
+
+.facility-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.facility-tag {
+  font-size: 0.78rem;
+  padding: 0.45em 1em;
+  border-radius: 2rem;
+  background: var(--surface);
+  color: var(--text-primary);
+  box-shadow: 0 1px 0 oklch(0 0 0 / 0.04);
+}
+
+/* ── Surroundings ── */
+.surroundings {
+  background: var(--surface);
+}
+
+.surround-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.surround-item {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.surround-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--sage);
+  flex-shrink: 0;
+  width: 1.8rem;
+}
+
+.surround-item h4 {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 500;
+  font-size: 0.92rem;
+  margin-bottom: 0.12rem;
+}
+
+.surround-item p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+/* ── Dining ── */
+.dining {
+  background: var(--cream);
+}
+
+.dining-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.dining-card {
+  background: var(--surface);
+  border-radius: 0.75rem;
+  padding: 1rem 1rem 0.8rem;
+  text-align: center;
+  box-shadow: 0 1px 0 oklch(0 0 0 / 0.03);
+}
+
+.dining-card .price {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--terracotta);
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.dining-card .price small {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 400;
+  font-size: 0.45em;
+}
+
+.dining-card h4 {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 500;
+  font-size: 0.88rem;
+  margin-bottom: 0.25rem;
+}
+
+.dining-card p {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ── Reviews ── */
+.reviews {
+  background: var(--surface);
+}
+
+.review-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.review-card {
+  background: var(--cream);
+  border-radius: 0.75rem;
+  padding: 1.2rem 1.2rem 1rem;
+  position: relative;
+}
+
+.review-card .stars {
+  color: oklch(0.72 0.12 60);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.1em;
+}
+
+.review-card q {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  quotes: none;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.review-card .reviewer {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+/* ── Hidden Perks ── */
+.perks {
+  background: var(--cream);
+}
+
+.perk-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.perk-item {
+  font-size: 0.82rem;
+  padding: 0.6em 0.8em;
+  background: var(--surface);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ── Booking CTA ── */
+.booking {
+  background: oklch(0.28 0.04 55);
+  color: oklch(0.96 0.01 90);
+  text-align: center;
+  padding: clamp(3rem, 10vw, 5rem) 1.5rem;
+}
+
+.booking .section-label {
+  color: oklch(0.82 0.06 30);
+}
+
+.booking .section-title {
+  color: oklch(0.97 0.01 95);
+}
+
+.booking .section-sub {
+  color: oklch(0.80 0.02 40);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.booking-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--deep);
+  background: oklch(0.90 0.05 80);
+  border: none;
+  border-radius: 3rem;
+  padding: 0.9em 2.4em;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 28px oklch(0 0 0 / 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 14px oklch(0 0 0 / 0.2);
+}
+
+.btn-secondary {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.88rem;
+  color: oklch(0.85 0.02 40);
+  text-decoration: none;
+  border-bottom: 1px solid oklch(0.85 0.02 40 / 0.3);
+  padding-bottom: 0.15em;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:active {
+  color: oklch(0.95 0.02 60);
+  border-color: oklch(0.95 0.02 60 / 0.5);
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  font-size: 0.82rem;
+  color: oklch(0.78 0.02 40);
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--cream);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  border-top: 1px solid oklch(0 0 0 / 0.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (min-width: 768px) {
+  body { max-width: 720px; margin: 0 auto; box-shadow: 0 0 0 1px oklch(0 0 0 / 0.05), 0 0 80px oklch(0 0 0 / 0.04); }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">Yangshuo · Bloom Valley</span>
+    <h1>
+      <small>遇龙河 · 十里画廊</small>
+      花语谷
+    </h1>
+    <p class="hero-desc">
+      隐逸阳朔山水间的四季花园秘境。51 间轻奢客房、上千种花卉、200 米花径步道——住进现实版绿野仙踪。
+    </p>
+    <a href="#booking" class="hero-cta">
+      查看房型 &amp; 预订
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-scroll"><span></span></div>
+</header>
+
+<!-- Season Banner -->
+<div class="season-banner">
+  🌸 六月盛夏花季
+  <span class="divider"></span>
+  暑期亲子游火热预订中 · 泡泡池开放
+</div>
+
+<!-- Overview -->
+<section class="overview">
+  <p class="section-label">At a Glance</p>
+  <h2 class="section-title">花语谷，一眼就爱上</h2>
+  <p class="section-sub">坐落在阳朔遇龙河与十里画廊核心区，距西街仅 10 分钟车程，出则繁华、入则静谧。</p>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="num">51</div>
+      <div class="label">轻奢客房</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">5</div>
+      <div class="label">独立楼栋</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">1000+</div>
+      <div class="label">花卉品种</div>
+    </div>
+  </div>
+
+  <div class="facility-tags">
+    <span class="facility-tag">200m 花径步道</span>
+    <span class="facility-tag">星空玻璃花房</span>
+    <span class="facility-tag">悬崖观景花台</span>
+    <span class="facility-tag">成人+儿童双泳池</span>
+    <span class="facility-tag">户外露营基地</span>
+    <span class="facility-tag">花园茶室</span>
+    <span class="facility-tag">免费自助洗衣</span>
+    <span class="facility-tag">24h 前台</span>
+  </div>
+</section>
+
+<!-- Highlights -->
+<section class="highlights">
+  <p class="section-label">Why Bloom Valley</p>
+  <h2 class="section-title">六大理由，来了就不想走</h2>
+  <p class="section-sub">Booking 满分好评，超 95% 住客为这片花园疯狂打 call。</p>
+
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <div class="highlight-icon">🌿</div>
+      <h3>四季花海花园</h3>
+      <p>春樱夏荷秋菊冬梅，上千种花卉全年盛放，每个角落都是打卡点</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">⛰️</div>
+      <h3>喀斯特山水环绕</h3>
+      <p>推窗见山，步行可达遇龙河竹筏码头，骑行穿越十里画廊</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">🏊</div>
+      <h3>双泳池 &amp; 泡泡池</h3>
+      <p>花园环绕成人泳池+儿童专属泳池，暑假泡泡池派对超欢乐</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">⛺</div>
+      <h3>阅山露营基地</h3>
+      <p>超大草坪营地，夜间篝火烧烤、星空观影、烟花盛宴</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">🍜</div>
+      <h3>正宗桂林早餐</h3>
+      <p>每日现做桂林米粉+手工杂粮，免费续加，住客零差评</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">👘</div>
+      <h3>免费民族服饰</h3>
+      <p>提供多款民族服饰免费拍照，花海间留下最美的旅行记忆</p>
+    </div>
+  </div>
+</section>
+
+<!-- Rooms -->
+<section class="rooms" id="rooms">
+  <p class="section-label">Rooms</p>
+  <h2 class="section-title">九种房型，总有一间为你</h2>
+  <p class="section-sub">5 栋独立楼宇，十几种风格。所有客房标配 WiFi、干湿分离卫浴、中央空调、24h 热水。</p>
+
+  <div class="room-list">
+    <div class="room-item">
+      <div>
+        <h4>山景大床房</h4>
+        <div class="room-meta">1.8m 大床 · 独立浴缸 · 推窗见山</div>
+        <div class="room-feature">⭐ 基础人气款</div>
+      </div>
+    </div>
+    <div class="room-item">
+      <div>
+        <h4>270° 观景大床房</h4>
+        <div class="room-meta">1.8m 大床 · 浴缸 · 全景落地窗</div>
+        <div class="room-feature">🔥 最受欢迎</div>
+      </div>
+    </div>
+    <div class="room-item">
+      <div>
+        <h4>榻榻米大床房</h4>
+        <div class="room-meta">1.8m 大床 · 日式榻榻米</div>
+        <div class="room-feature">☁️ 客人说像睡在云朵上</div>
+      </div>
+    </div>
+    <div class="room-item">
+      <div>
+        <h4>轻奢套房</h4>
+        <div class="room-meta">双 1.5m 大床 · 浴缸 · 一房一厅</div>
+        <div class="room-feature">✨ 私享空间</div>
+      </div>
+    </div>
+    <div class="room-item">
+      <div>
+        <h4>标准双床房</h4>
+        <div class="room-meta">双 1.2m 床 · 性价比之选</div>
+      </div>
+    </div>
+    <div class="room-item">
+      <div>
+        <h4>轻奢亲子房</h4>
+        <div class="room-meta">1.8m大床 + 1.2m榻榻米 · 亲子首选</div>
+        <div class="room-feature">👨‍👩‍👧 带娃零负担</div>
+      </div>
+    </div>
+    <div class="room-item">
+      <div>
+        <h4>主题双床房</h4>
+        <div class="room-meta">双 1.2m 床 · 特色主题设计</div>
+      </div>
+    </div>
+    <div class="room-item">
+      <div>
+        <h4>豪华轻奢亲子套房</h4>
+        <div class="room-meta">1.8m大床 + 1.2m榻榻米 · 豪华配置</div>
+        <div class="room-feature">👑 家庭旗舰款</div>
+      </div>
+    </div>
+    <div class="room-item">
+      <div>
+        <h4>榻榻米双床房</h4>
+        <div class="room-meta">双 1.2m 床 · 日式风情</div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:1rem;text-align:center;">支持独栋别墅包栋（5房/10房），团建聚会首选</p>
+</section>
+
+<!-- Facilities -->
+<section class="facilities">
+  <p class="section-label">Amenities</p>
+  <h2 class="section-title">超全配套，一站式度假</h2>
+  <p class="section-sub">不只是住一晚，花语谷提供从吃到玩的全套体验。</p>
+
+  <div class="facility-tags">
+    <span class="facility-tag">🌿 沉浸式花海花园</span>
+    <span class="facility-tag">⛺ 阅山露营基地</span>
+    <span class="facility-tag">🏊 成人+儿童泳池</span>
+    <span class="facility-tag">🫖 花园独立茶室</span>
+    <span class="facility-tag">♟️ 棋牌室</span>
+    <span class="facility-tag">🌳 网红树屋</span>
+    <span class="facility-tag">🎠 草坪秋千</span>
+    <span class="facility-tag">🍖 烧烤区</span>
+    <span class="facility-tag">🔥 篝火晚会</span>
+    <span class="facility-tag">🎆 烟花燃放</span>
+    <span class="facility-tag">👘 民族服饰</span>
+    <span class="facility-tag">🚲 免费自行车</span>
+    <span class="facility-tag">🧺 自助洗衣房</span>
+    <span class="facility-tag">💼 商务会议室</span>
+    <span class="facility-tag">♿ 无障碍设施</span>
+  </div>
+</section>
+
+<!-- Dining -->
+<section class="dining">
+  <p class="section-label">Dining</p>
+  <h2 class="section-title">舌尖上的花语谷</h2>
+  <p class="section-sub">从早餐到夜宵，从围炉煮茶到户外烧烤，你的胃也会爱上这里。</p>
+
+  <div class="dining-cards">
+    <div class="dining-card">
+      <div class="price">免费</div>
+      <h4>每日桂林米粉早餐</h4>
+      <p>现做手工桂林米粉+杂粮/鸡蛋/红薯，8:00-10:00 免费续加</p>
+    </div>
+    <div class="dining-card">
+      <div class="price">¥68<small>/份</small></div>
+      <h4>精致下午茶</h4>
+      <p>茶品+六种坚果小吃+时令果盘，花田边享受</p>
+    </div>
+    <div class="dining-card">
+      <div class="price">¥128<small>/份</small></div>
+      <h4>围炉煮茶</h4>
+      <p>九种烤品+五款茶品可选+果盘，露营区氛围拉满</p>
+    </div>
+    <div class="dining-card">
+      <div class="price">提前预定</div>
+      <h4>户外BBQ烧烤</h4>
+      <p>新鲜食材+全套设备，天幕下星空烧烤派对</p>
+    </div>
+  </div>
+  <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:1rem;text-align:center;">还可在花园茶室品茗、定制阳朔特色团餐、节日私宴</p>
+</section>
+
+<!-- Surroundings -->
+<section class="surroundings">
+  <p class="section-label">Explore</p>
+  <h2 class="section-title">周边怎么玩</h2>
+  <p class="section-sub">花语谷在阳朔核心景区 C 位，出门就是风景。</p>
+
+  <div class="surround-list">
+    <div class="surround-item">
+      <span class="surround-num">01</span>
+      <div>
+        <h4>遇龙河竹筏漂流</h4>
+        <p>步行直达竹筏码头，骑行/小电驴 10+ 分钟，泛舟碧波之上</p>
+      </div>
+    </div>
+    <div class="surround-item">
+      <span class="surround-num">02</span>
+      <div>
+        <h4>十里画廊骑行</h4>
+        <p>民宿免费提供自行车，穿梭喀斯特山水田园，网红打卡点一路串连</p>
+      </div>
+    </div>
+    <div class="surround-item">
+      <span class="surround-num">03</span>
+      <div>
+        <h4>阳朔西街夜市</h4>
+        <p>短途车程即达，地道美食、酒吧、文创店铺，体验阳朔夜生活</p>
+      </div>
+    </div>
+    <div class="surround-item">
+      <span class="surround-num">04</span>
+      <div>
+        <h4>桂林千古情景区</h4>
+        <p>大型实景演出+游乐项目，沉浸式感受桂林千年文化</p>
+      </div>
+    </div>
+    <div class="surround-item">
+      <span class="surround-num">05</span>
+      <div>
+        <h4>小众玩法推荐</h4>
+        <p>民宿老板可对接攀岩、热气球、滑翔翼、小众徒步路线，附赠避坑指南</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews">
+  <p class="section-label">Guest Love</p>
+  <h2 class="section-title">住客怎么说</h2>
+  <p class="section-sub">Booking 满分 10 分，全平台卫生满分，超 90% 客人说"睡得比家里还香"。</p>
+
+  <div class="review-cards">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <q>现实版绿野仙踪！推窗就是花海和喀斯特山景，270度观景房太震撼了。早餐的桂林米粉是吃过最正宗的，连吃了三碗。</q>
+      <div class="reviewer">— 上海 · 情侣出游</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <q>带娃来的，亲子房超贴心，儿童泳池+泡泡池孩子玩疯了。草坪秋千和树屋简直是孩子的天堂，大人也能在茶室喝茶放松。</q>
+      <div class="reviewer">— 广州 · 亲子家庭</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <q>公司团建包了一栋别墅，白天骑行遇龙河，晚上篝火烧烤看烟花。民宿帮忙策划了一切，完全不操心。同事们都说下次还来。</q>
+      <div class="reviewer">— 深圳 · 公司团建</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <q>一尘不染，连漱口杯和水壶都干干净净。服务像回到朋友家一样自在，还免费升级了房型。临走老板推荐了拐哥鼎锅饭，绝了！</q>
+      <div class="reviewer">— 北京 · 独自旅行</div>
+    </div>
+  </div>
+</section>
+
+<!-- Hidden Perks -->
+<section class="perks">
+  <p class="section-label">Bonus</p>
+  <h2 class="section-title">住客发现的隐藏福利</h2>
+  <p class="section-sub">这些免费项目，住过的人都说太值了。</p>
+
+  <div class="perk-list">
+    <div class="perk-item">👘 民族服饰拍照</div>
+    <div class="perk-item">🚲 免费自行车骑行</div>
+    <div class="perk-item">🧺 自助洗衣+烘干</div>
+    <div class="perk-item">🎁 入住免费升级房型</div>
+    <div class="perk-item">🎆 节日烟花盛宴</div>
+    <div class="perk-item">🥟 饺子DIY体验</div>
+    <div class="perk-item">🏮 猜灯谜·打油茶</div>
+    <div class="perk-item">🗺️ 小众路线避坑指南</div>
+  </div>
+</section>
+
+<!-- Booking -->
+<section class="booking" id="booking">
+  <p class="section-label">Reserve</p>
+  <h2 class="section-title">预订你的花语时光</h2>
+  <p class="section-sub">阳朔花语谷民宿 · 遇龙河十里画廊店。建议提前 7-15 天预订，暑期房源紧张。</p>
+
+  <div class="booking-actions">
+    <a href="tel:" class="btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      电话咨询预订
+    </a>
+    <span class="btn-secondary">或通过各 OTA 平台搜索「阳朔花语谷民宿」预订</span>
+  </div>
+
+  <div class="contact-info">
+    <span>📍 阳朔 · 万景码头旁 · 321国道南侧</span>
+    <span>🚗 高速高田站下约15分钟</span>
+  </div>
+</section>
+
+<footer>
+  阳朔花语谷民宿 &copy; 2026 &nbsp;·&nbsp; 遇龙河十里画廊店 &nbsp;·&nbsp; 隐逸山水间，等花开，也等你来。
+</footer>
+
+</body>
+</html>
